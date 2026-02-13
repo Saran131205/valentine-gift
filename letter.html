@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #5f27cd, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .envelope {
+            background: rgba(245, 230, 211, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 0 auto 30px;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .heart-seal {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .letter {
+            background: #fef9f0;
+            border: 3px solid transparent;
+            background-image: linear-gradient(#fef9f0, #fef9f0), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .letter-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: #5c4a3a;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .letter p:first-letter {
+            font-size: 48px;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            color: #8b6f47;
+        }
+
+        .back-btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>To Rajie! 💖</h1>
+        
+        <div class="envelope">
+            <div class="heart-seal">💖</div>
+        </div>
+        
+        <div class="letter">
+            <div class="letter-title">My Dearest Thangam,</div>
+            
+            <p>Evlo sanda vanthalum piriyave koodathu mah , enna vitu polam nu mattum nenaikatha chlm , nee illama lan ennala iruka mudiyathu , kovapaduven aprm unkita than varuven , just kovam avlothan athu athoda mudinchirum , aana antha kovathukaga ennaya vitutulan ponum nu epovum nenaikatha rajiee mah 💋</p>
+            
+            <p>Enaku appo unmela evlo love irunthucho athe alavuku than ipovum love pandren, unakum enmela athe love irukum nu nenaikuren, namma ipdiye ithe love oda life long irukanum babyy, rendu perum kovatha koraipom eppovum happy ah irupom🫂❤️</p>
+            
+            <p>Nammalukke theriyama neraya chinna chinna visayathula namma ore mathiri yosikurom, ennavida unna pathi yarum ivloku theirnju vachirka mudiyathu, purinju vachurkavum mudiythu , athe mathiri than ennayum un level ku yaralayum purinju vachirka mudiyathu , namma rendu perume made for each other than pola 🖤☺️😘</p>
+        </div>
+        
+        <button class="back-btn" onclick="window.location.href='gifts.html'">Back to Gifts</button>
+    </div>
+</body>
+</html>

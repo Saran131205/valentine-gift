@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Sounds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #5f27cd, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .player-section {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .album-cover {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            overflow: hidden;
+        }
+        
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .song-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .movie-name {
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            background: rgba(102, 126, 234, 0.2);
+            border: none;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 24px;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .playlist-section {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .playlist-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .song-item {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .song-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateX(5px);
+        }
+
+        .song-item.active {
+            background: rgba(102, 126, 234, 0.3);
+            border-left: 4px solid #667eea;
+        }
+
+        .song-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .song-name {
+            color: #333;
+            flex: 1;
+        }
+
+        .song-duration {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .back-btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .volume-icon {
+            color: #333;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Our Love Sounds Like This! 🎵</h1>
+        
+        <div class="player-section">
+            <div class="album-cover" id="albumCover">🎬</div>
+            <div class="song-title" id="currentSong">Aaruyire</div>
+            <div class="movie-name">Love Song</div>
+            
+            <div class="controls">
+                <button class="control-btn" onclick="previousSong()">⏮️</button>
+                <button class="control-btn play-btn" onclick="togglePlay()">▶️</button>
+                <button class="control-btn" onclick="nextSong()">⏭️</button>
+            </div>
+            
+            <div class="volume-control">
+                <span class="volume-icon">🔊</span>
+            </div>
+        </div>
+        
+        <div class="playlist-section">
+            <div class="playlist-title">OUR PLAYLIST</div>
+            
+            <div class="song-item active" onclick="playSong(0)">
+                <span class="song-number">01</span>
+                <span class="song-name">Aaruyire</span>
+                <span class="song-duration">3:17</span>
+            </div>
+            
+            <div class="song-item" onclick="playSong(1)">
+                <span class="song-number">02</span>
+                <span class="song-name">Agasatha</span>
+                <span class="song-duration">4:39</span>
+            </div>
+            
+            <div class="song-item" onclick="playSong(2)">
+                <span class="song-number">03</span>
+                <span class="song-name">Machaan Machaan</span>
+                <span class="song-duration">04:51</span>
+            </div>
+            
+            <div class="song-item" onclick="playSong(3)">
+                <span class="song-number">04</span>
+                <span class="song-name">Pogatha Yennavittu</span>
+                <span class="song-duration">3:43</span>
+            </div>
+            
+            <div class="song-item" onclick="playSong(4)">
+                <span class="song-number">05</span>
+                <span class="song-name">Pondattee</span>
+                <span class="song-duration">4:08</span>
+            </div>
+        </div>
+        
+        <button class="back-btn" onclick="window.location.href='gifts.html'">Back to Gifts</button>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+    
+    <script>
+        const songs = [
+            { name: "Aaruyire", movie: "Love Song", url: "file:///C:/Users/ADMIN/Music/New folder/Aaruyire.mp3", cover: "file:///C:/Users/ADMIN/Music/New folder/Aaruyire.jpg" },
+            { name: "Agasatha", movie: "Romantic", url: "file:///C:/Users/ADMIN/Music/New folder/Agasatha.mp3", cover: "file:///C:/Users/ADMIN/Music/New folder/agasatha.jpg" },
+            { name: "Machaan Machaan", movie: "Fun Song", url: "file:///C:/Users/ADMIN/Music/New folder/Machaan Machaan.mp3", cover: "file:///C:/Users/ADMIN/Music/New folder/machan machan.jpg" },
+            { name: "Pogatha Yennavittu", movie: "Love Melody", url: "file:///C:/Users/ADMIN/Music/New folder/Pogatha-Yennavittu-MassTamilan.com.mp3", cover: "file:///C:/Users/ADMIN/Music/New folder/Pogatha Yennavittu.jpg" },
+            { name: "Pondattee", movie: "Dream Song", url: "file:///C:/Users/ADMIN/Music/New folder/Pondattee-MassTamilan.com.mp3", cover: "file:///C:/Users/ADMIN/Music/New folder/Pondattee.jpg" }
+        ];
+        
+        let currentSongIndex = 0;
+        let isPlaying = false;
+        const audio = document.getElementById('audioPlayer');
+        const albumCover = document.getElementById('albumCover');
+
+        function playSong(index) {
+            currentSongIndex = index;
+            document.getElementById('currentSong').textContent = songs[index].name;
+            document.querySelector('.movie-name').textContent = songs[index].movie;
+            
+            albumCover.innerHTML = `<img src="${songs[index].cover}" alt="${songs[index].name}" onerror="this.parentElement.innerHTML='🎬'">`;
+            
+            const items = document.querySelectorAll('.song-item');
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+            
+            audio.src = songs[index].url;
+            audio.play();
+            isPlaying = true;
+            document.querySelector('.play-btn').textContent = '⏸️';
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector('.play-btn').textContent = '▶️';
+            } else {
+                audio.play();
+                document.querySelector('.play-btn').textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            playSong(currentSongIndex);
+        }
+
+        function previousSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            playSong(currentSongIndex);
+        }
+        
+        audio.addEventListener('ended', nextSong);
+    </script>
+</body>
+</html>

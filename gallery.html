@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Moment with You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #5f27cd, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .photo-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message-box h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .message-box p {
+            color: #333;
+            font-size: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Every Moment with You! 📸</h1>
+        
+        <div class="message-box">
+            <h2>Happy 6th 'propose-day' anniversary, baby!</h2>
+            <p>Raji , it's been six years since the day I proposed to you.</p>
+        </div>
+        
+        <div class="gallery">
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/1.jpeg" alt="Photo 1">
+                </div>
+                <div class="caption">Our first special moment together</div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/2.jpeg" alt="Photo 2">
+                </div>
+                <div class="caption">Us</div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/3.jpeg" alt="Photo 3">
+                </div>
+                <div class="caption">Until end</div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/4.jpeg" alt="Photo 4">
+                </div>
+                <div class="caption">Happy moments</div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/5.jpeg" alt="Photo 5">
+                </div>
+                <div class="caption">Good one</div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="file:///C:/Users/ADMIN/Music/img/6.jpeg" alt="Photo 6">
+                </div>
+                <div class="caption">Forever Love</div>
+            </div>
+        </div>
+        
+        <button class="back-btn" onclick="window.location.href='gifts.html'">Back to Gifts</button>
+    </div>
+</body>
+</html>

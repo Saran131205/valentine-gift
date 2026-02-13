@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #5f27cd, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 80px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .bear {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        p {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .no-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <svg class="bear" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="12" fill="#c9a88a" stroke="#8b7355" stroke-width="2"/>
+            <circle cx="75" cy="25" r="12" fill="#c9a88a" stroke="#8b7355" stroke-width="2"/>
+            <ellipse cx="50" cy="50" rx="35" ry="40" fill="#d4b896"/>
+            <circle cx="40" cy="45" r="3" fill="#5c4033"/>
+            <circle cx="60" cy="45" r="3" fill="#5c4033"/>
+            <path d="M 45 55 Q 50 58 55 55" stroke="#8b7355" stroke-width="2" fill="none"/>
+            <ellipse cx="50" cy="52" rx="4" ry="5" fill="#e6c8a8"/>
+            <path d="M 30 80 Q 35 75 40 80" stroke="#8b7355" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M 60 80 Q 65 75 70 80" stroke="#8b7355" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        
+        <h1>Rajie</h1>
+        <p>Will you be my Valentine? 🥰 ❤️</p>
+        
+        <div class="buttons">
+            <button class="yes-btn" onclick="handleYes()">YES 💕</button>
+            <button class="no-btn" onclick="handleNo()">NO 💔</button>
+        </div>
+    </div>
+
+    <script>
+        function handleYes() {
+            window.location.href = 'yes.html';
+        }
+
+        function handleNo() {
+            alert("Oh no! 😢 Maybe next time?");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Valentine Gifts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #5f27cd, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 80px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 750px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 42px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .gifts-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .gift-box {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 20px;
+            padding: 30px;
+            width: 200px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gift-box:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .gift-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .gift-icon {
+            font-size: 80px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💝 Your Valentine Gifts 💝</h1>
+        
+        <div class="gifts-container">
+            <div class="gift-box" onclick="openGift(1)">
+                <div class="gift-title">Gift 1</div>
+                <div class="gift-icon">🎁</div>
+            </div>
+            
+            <div class="gift-box" onclick="openGift(2)">
+                <div class="gift-title">Gift 2</div>
+                <div class="gift-icon">🎁</div>
+            </div>
+            
+            <div class="gift-box" onclick="openGift(3)">
+                <div class="gift-title">Gift 3</div>
+                <div class="gift-icon">🎁</div>
+            </div>
+        </div>
+        
+        <button onclick="window.location.href='yes.html'">Back to Love</button>
+    </div>
+
+    <script>
+        function openGift(giftNumber) {
+            if (giftNumber === 1) {
+                window.location.href = 'music.html';
+            } else if (giftNumber === 2) {
+                window.location.href = 'letter.html';
+            } else if (giftNumber === 3) {
+                window.location.href = 'gallery.html';
+            }
+        }
+    </script>
+</body>
+</html>
